@@ -204,6 +204,7 @@ if __name__ == "__main__":
             for line in f:
                 test, backend = line.split(",")
                 coll, submod, test_fn = get_submodule(test)
+                print(f"Running test: {test}")
                 remove_from_db(db[coll[0]], coll[1], submod, backend, test_fn)
     except Exception:
         pass
